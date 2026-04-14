@@ -15,7 +15,7 @@ echo "${X}*${Y}=${MULTIPLICACIO}"
 
 if [[ ${Y} -le 0 ]]
 then
-    echo "Error: No es pot dividir entre 0 o un numero negatiu"
+    echo "Error: No es pot dividir entre 0"
     exit 1
 fi
 
