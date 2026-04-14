@@ -12,5 +12,12 @@ RESTA=$((X-Y))
 echo "${X}-${Y}=${RESTA}"
 MULTIPLICACIO=$((X*Y))
 echo "${X}*${Y}=${MULTIPLICACIO}"
+
+if [[ ${Y} -le 0 ]]
+then
+    echo "Error: No es pot dividir entre 0 o un numero negatiu"
+    exit 1
+fi
+
 DIVISIO=$(echo "scale=2; ${X}/${Y}" | bc)
 echo "${X}/${Y}=${DIVISIO}"
