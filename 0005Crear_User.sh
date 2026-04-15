@@ -36,7 +36,16 @@ fi
 
 echo "Creant l'usuari ${USER_NAME}"
 
+#Canvi de password
+echo "${USER_NAME}:${PASSWORD}" | chpasswd
+#Comprovam si el canvi de password ha anat bé
+if [[ $? -ne 0 ]]
+then
+    echo "Errada creant password"
+    exit 1
+fi
 
-
+#Fer caducar el password
+passwd -e ${USER_NAME}
 
 exit 0
